@@ -12,7 +12,7 @@ def add_entries_to_css(f, file, text, color):
 				first_entry = False
 			else:
 				f.write(',')
-			f.write('a[href*="/{}"]:after'.format(l))
+			f.write('a[data-hovercard-type="user"][href*="/{}"]:after'.format(l))
 		f.write(make_css(text, color) + '\n')
 	f.write('}\n')
 	with open(file + '-global.txt') as f_global:
@@ -31,7 +31,7 @@ with open('rms-supporters-haters-highlighter.user.css', 'w') as f:
 /* ==UserStyle==
 @name           RMS supporters/haters highlighter
 @namespace      https://github.com/rndtrash/rms-supporters-haters-highlighter
-@version        1.0.1
+@version        1.0.2
 @description    nuff said
 @author         rndtrash and frens :)
 ==/UserStyle== */
