@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def make_css(text, color):
-	return '{' + 'content: {0};display: inline-block;margin-left: 4px;padding: 0 7px;font-size: 12px;font-weight: 500;line-height: 18px;border-radius: 2em;border: 1px solid transparent;color: var(--color-pr-state-{1}-text);background-color: var(--color-pr-state-{1}-bg);border-color: var(--color-pr-state-{1}-border);'.format(text, color) + '}' # thx python
+	return '{' + 'content: "{0}";display: inline-block;margin-left: 4px;padding: 0 7px;font-size: 12px;font-weight: 500;line-height: 18px;border-radius: 2em;border: 1px solid transparent;color: var(--color-pr-state-{1}-text);background-color: var(--color-pr-state-{1}-bg);border-color: var(--color-pr-state-{1}-border);'.format(text, color) + '}' # thx python
 
 def add_entries_to_css(f, file, text, color):
 	f.write('@-moz-document domain("github.com") {\n')
