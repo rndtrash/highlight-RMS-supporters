@@ -16,4 +16,4 @@ function addStyleSheet(style){
   return elementStyle;
 }
 
-addStyleSheet('@import "https://sticks-stuff.github.io/highlight-RMS-supporters/styles.css";');
+addStyleSheet('@import "https://rndtrash.github.io/highlight-RMS-supporters/styles.css";');
