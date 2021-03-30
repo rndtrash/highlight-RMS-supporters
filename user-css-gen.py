@@ -31,7 +31,7 @@ with open('rms-supporters-haters-highlighter.user.css', 'w') as f:
 /* ==UserStyle==
 @name           RMS supporters/haters highlighter
 @namespace      https://github.com/rndtrash/rms-supporters-haters-highlighter
-@version        1.0.0
+@version        1.0.1
 @description    nuff said
 @author         rndtrash and frens :)
 ==/UserStyle== */
@@ -40,4 +40,4 @@ with open('rms-supporters-haters-highlighter.user.css', 'w') as f:
 	f.write(':root{--color-pr-state-open-text: \#57ab5a;--color-pr-state-open-bg: rgba(87,171,90,0.1);--color-pr-state-open-border: rgba(87,171,90,0.4);--color-pr-state-merged-text: \#986ee2;--color-pr-state-merged-bg: rgba(176,131,240,0.1);--color-pr-state-merged-border: rgba(176,131,240,0.4);--color-pr-state-closed-text: \#e5534b;--color-pr-state-closed-bg: rgba(201,60,55,0.1);--color-pr-state-closed-border: rgba(201,60,55,0.4);}\n')
 	add_entries_to_css(f, 'rms-supporters', 'Based!', 'open')
 	add_entries_to_css(f, 'rms-haters', 'Cringe', 'closed')
-	add_entries_to_css(f, 'gigachads', 'merged', 'merged')
+	add_entries_to_css(f, 'gigachads', 'GIGACHAD', 'merged')
