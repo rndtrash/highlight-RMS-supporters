@@ -59,8 +59,7 @@ def set_to_file(s, f_gh, f_global):
 		try_gh = match_github_handle(u)
 		if try_gh != None and try_gh.group(4) != None:
 			f_gh.write(try_gh.group(4) + '\n')
-		else:
-			f_global.write(u + '\n')
+		f_global.write(u + '\n')
 
 print('Writing lists to files...')
 
