@@ -7,7 +7,7 @@ and not-so-based peeps who have signed the [RMS Open letter](https://github.com/
 
 Collecting data of peeps who signed the support letter is bad, so you have to [build it by yourself](#building).
 
-The stylesheet is rather large (~75kb) but your browser should cache it after one transfer so it's not a big deal.
+The stylesheet is rather large (~240kb) but your browser should cache it after one transfer so it's not a big deal.
 
 Commits and PRs are very welcome :)
 
