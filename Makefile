@@ -7,7 +7,7 @@ all: rms-supporters-haters-highlighter.user.css
 
 rms-supporters:
 #	$(PYTHON) rms-supporters.py
-	touch rms-supporters.sh
+	touch rms-supporters.txt
 	$(SHELL)  rms-supporters.sh
 
 rms-haters:
@@ -24,4 +24,5 @@ clean:
 		rms-haters-gh.txt rms-haters-global.txt rms-haters.txt \
 		gigachads-gh.txt gigachads-global.txt \
 		rms-supporters-haters-highlighter.user.css
+# enable for automatic support-letter repository deletion
 #	rm -rf rms-support-letter.github.io
