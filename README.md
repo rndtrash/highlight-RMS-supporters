@@ -16,10 +16,11 @@ Thanks to [@sowa705](https://github.com/sowa705) for support and open letter scr
 
 ## Versioning scheme
 
-X.Y (e.g. 1.9), where:
+X.Y.Z (e.g. 1.0.9), where:
 
-* X - change in CSS generator
-* Y - change in data
+* X - major change in CSS generator
+* Y - minor change in CSS generator
+* Z - change in data
 Numbers start from 0.
 
 ## Building

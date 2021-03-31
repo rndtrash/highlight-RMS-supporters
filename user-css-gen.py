@@ -31,7 +31,7 @@ with open('rms-supporters-haters-highlighter.user.css', 'w') as f:
 /* ==UserStyle==
 @name           RMS supporters/haters highlighter
 @namespace      https://github.com/rndtrash/rms-supporters-haters-highlighter
-@version        2.0-prerelease
+@version        2.0.0
 @description    nuff said
 @author         rndtrash and frens :)
 ==/UserStyle== */
