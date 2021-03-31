@@ -1,4 +1,4 @@
-# Highlight RMS supporters
+# RMS Supporters/Haters Highlighter
 
 This User CSS highlights based chads who have signed the [RMS Support letter](https://github.com/rms-support-letter/rms-support-letter.github.io)
 and not-so-based peeps who have signed the [RMS Open letter](https://github.com/rms-open-letter/rms-open-letter.github.io)
