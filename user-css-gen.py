@@ -12,7 +12,7 @@ def add_entries_to_css(f, file, text, color):
 				first_entry = False
 			else:
 				f.write(',')
-			f.write('a[data-hovercard-type="user"][href="/{}"]:after'.format(l))
+			f.write('a[href="/{}"]:after'.format(l)) # [data-hovercard-type="user"]
 		f.write(make_css(text, color) + '\n')
 	f.write('}\n')
 	with open(file + '-global.txt') as f_global:
