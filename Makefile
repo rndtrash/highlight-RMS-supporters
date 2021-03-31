@@ -1,12 +1,13 @@
 .PHONY: all clean
 
 PYTHON := python3
+SHELL := bash
 
 all: rms-supporters-haters-highlighter.user.css
 
 rms-supporters:
 	$(PYTHON) rms-supporters.py
-	bash rms-supporters.sh
+	$(SHELL)  rms-supporters.sh
 
 rms-haters:
 	$(PYTHON) rms-haters.py
