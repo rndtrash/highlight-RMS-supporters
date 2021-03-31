@@ -12,5 +12,9 @@ if response.status_code == 200:
 	for link in soup.select('ol li a'):
 		l = link.get('href').rstrip('/#')
 		if l != '':
+			#Prevents based Augusto from being too based
+			if l.startswith('http://github.com/augustozanellato'):
+				f.write('http://github.com/augustozanellato' + '\n')
+				continue
 			f.write(l + '\n')
 f.close()
