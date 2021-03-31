@@ -6,6 +6,7 @@ all: rms-supporters-haters-highlighter.user.css
 
 rms-supporters:
 	$(PYTHON) rms-supporters.py
+	bash rms-supporters.sh
 
 rms-haters:
 	$(PYTHON) rms-haters.py
@@ -21,3 +22,4 @@ clean:
 		rms-haters-gh.txt rms-haters-global.txt rms-haters.txt \
 		gigachads-gh.txt gigachads-global.txt \
 		rms-supporters-haters-highlighter.user.css
+	rm -rf rms-support-letter.github.io
