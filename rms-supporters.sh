@@ -1,5 +1,14 @@
-#!/bin/bash
-git clone https://github.com/rms-support-letter/rms-support-letter.github.io
+#!/usr/bin/env bash
+
+if [ -d "./rms-support-letter.github.io" ]
+then
+	cd rms-support-letter.github.io
+	git pull
+	cd ..
+else
+	git clone https://github.com/rms-support-letter/rms-support-letter.github.io
+fi
+
 cd ./rms-support-letter.github.io/_data/signed/
 touch ../list0 && ls > ../list0
 cd ..
