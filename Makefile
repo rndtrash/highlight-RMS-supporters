@@ -6,8 +6,6 @@ SHELL := bash
 all: rms-supporters-haters-highlighter.user.css
 
 rms-supporters:
-#	$(PYTHON) rms-supporters.py
-	touch rms-supporters.txt
 	$(SHELL)  rms-supporters.sh
 
 rms-haters:
@@ -26,3 +24,6 @@ clean:
 		rms-supporters-haters-highlighter.user.css
 # enable for automatic support-letter repository deletion
 #	rm -rf rms-support-letter.github.io
+# error: message: API rate limit exceeded
+# if you enable automatic github api files removal you risk getting blocked for some hours
+	rm -rf api
