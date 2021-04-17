@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
+
+bash github-api-fetch.sh
+#github-api-fetch.sh has to have been executed, and if it failed try again later
+if [ -f api/exit-everything ]; then
+    exit
+fi
+
 #3 WAYS of obtaining the github accounts
 
 #WAY By clonning the repository
 #if the letter repository has not been cloned it does so, else pulls
 rm rms-supporters.txt
 touch rms-supporters.txt
-mkdir api
 
 if [ -d "./rms-support-letter.github.io" ]
 then
@@ -28,19 +34,7 @@ rm list0 list1
 cd ../../api
 
 #WAY Through the Github API
-#Obtaining all the pages of contributors using the API
-
-#if github places limits on your fetch (message: API rate limit exceeded), modify the range and fetch what is missing after a couple of hours
-#currently there are about 60 pages of contributors
-for i in {1..70}
-do
-    VARI='https://api.github.com/repos/rms-support-letter/rms-support-letter.github.io/contributors?per_page=90&anon=1&page='$i
-    VARO='api'$i
-    curl -H "Accept: application/vnd.github.v3+json" $VARI > $VARO
-done
-
-#API contributors
-echo here2
+#API linked contributors
 cat api* | grep "\"login\"" >> aplogin0
 cat aplogin0 | cut -c 15- > aplogin1
 sed -i 's/\",//' aplogin1
