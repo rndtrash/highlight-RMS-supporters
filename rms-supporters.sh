@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
+rm rms-supporters.txt
+touch rms-supporters.txt
 
-bash github-api-fetch.sh
+FOLDER="api-supporters"
+bash github-api/github-api-fetch.sh $FOLDER "rms-support-letter/rms-support-letter.github.io"
 #github-api-fetch.sh has to have been executed, and if it failed try again later
-if [ -f api/exit-everything ]; then
+if [ -f $FOLDER/exit-everything ]; then
     exit
 fi
 
 #3 WAYS of obtaining the github accounts
-
 #WAY By clonning the repository
-#if the letter repository has not been cloned it does so, else pulls
-rm rms-supporters.txt
-touch rms-supporters.txt
+#if the letter repository has not been cloned, it clones it, else pulls
 
 if [ -d "./rms-support-letter.github.io" ]
 then
@@ -29,24 +29,9 @@ cd ..
 sed -i 's/.yaml//g' list0
 awk '$0="https://github.com/"$0' list0 > list1
 cat ../../rms-supporters.txt list1 > list2
-mv list2 ../../api/apclone
+mv list2 ../../$FOLDER/apclone
 rm list0 list1
-cd ../../api
-
-#WAY Through the Github API
-#API linked contributors
-cat api* | grep "\"login\"" >> aplogin0
-cat aplogin0 | cut -c 15- > aplogin1
-sed -i 's/\",//' aplogin1
-awk '$0="https://github.com/"$0' aplogin1 > aplogin2
-
-#API anonymous contributors
-cat api* | grep "noreply.github" >> apnoreply0
-cat apnoreply0 | cut -c 15- > apnoreply1
-sed -i 's/@users.noreply.github.com\",//' apnoreply1
-sed -i 's/*+//' apnoreply1
-sed -i 's/^[^+]*+//' apnoreply1
-awk '$0="https://github.com/"$0' apnoreply1 > apnoreply2
+cd ../../$FOLDER
 
 #WAY From the rendered html of the Support Letter
 curl "https://rms-support-letter.github.io/" | grep "      <a href=\"https://github.com" > apicurl0
@@ -54,7 +39,7 @@ cat apicurl0 | cut -c 13- > apicurl1
 sed -i 's/\">.*//' apicurl1
 
 #Merging and deduplication
-cat aplogin2 apnoreply2 apicurl1 apclone > ap
+cat apoutput apicurl1 apclone > ap
 sort -u ap > ../rms-supporters.txt
 #rm api*
 cd ..

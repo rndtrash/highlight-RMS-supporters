@@ -9,7 +9,7 @@ rms-supporters:
 	$(SHELL)  rms-supporters.sh
 
 rms-haters:
-	$(PYTHON) rms-haters.py
+	$(SHELL)  rms-haters.sh
 
 sort-ppl: rms-supporters rms-haters
 	$(PYTHON) sort-ppl.py
@@ -28,4 +28,5 @@ clean-all: clean
 	rm -rf rms-support-letter.github.io
 # the potential self-caused error: message: API rate limit exceeded
 # if you do this, the removal of github-api retrieved files, you risk getting blocked for some hours due to the already tightly used limit of data download you can use per IP 
-	rm -rf api
+	rm -rf api-supporters
+	rm -rf api-haters
