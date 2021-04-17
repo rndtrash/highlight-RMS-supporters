@@ -9,7 +9,7 @@ rms-supporters:
 	$(SHELL)  rms-supporters.sh
 
 rms-haters:
-	$(PYTHON) rms-haters.py
+	$(SHELL)  rms-haters.sh
 
 sort-ppl: rms-supporters rms-haters
 	$(PYTHON) sort-ppl.py
@@ -22,8 +22,11 @@ clean:
 		rms-haters-gh.txt rms-haters-global.txt rms-haters.txt \
 		gigachads-gh.txt gigachads-global.txt \
 		rms-supporters-haters-highlighter.user.css
-# enable for automatic support-letter repository deletion
-#	rm -rf rms-support-letter.github.io
-# error: message: API rate limit exceeded
-# if you enable automatic github api files removal you risk getting blocked for some hours
-	rm -rf api
+
+clean-all: clean
+# this is for support-letter repository deletion, but better to clone once and update than rm and clone again
+	rm -rf rms-support-letter.github.io
+# the potential self-caused error: message: API rate limit exceeded
+# if you do this, the removal of github-api retrieved files, you risk getting blocked for some hours due to the already tightly used limit of data download you can use per IP 
+	rm -rf api-supporters
+	rm -rf api-haters
